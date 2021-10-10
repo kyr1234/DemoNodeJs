@@ -1,6 +1,7 @@
 import { readFile,writeFile} from 'fs/promises';
 
 //Readfile returns an promise
+//NPM RUN SERVE IS USED TO RUN RENDER STATIC PAGES ON THE SITE
 
 let fileread = await readFile(new URL('index.html', import.meta.url), 'utf-8')
 console.log(fileread)
