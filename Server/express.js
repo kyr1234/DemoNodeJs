@@ -1,8 +1,8 @@
 const express = require('express')
-const bodyparser = require('body-parser');
+const bodyparser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
-const port = 8000 || process.env
+const port = 8000 || process.env.PORT
 
 //WITH BODYPARSER YOU CAN TAKE THE TEXT AND DATA FROM REQUEST OTHERWISE THE DATA FROM REQ WOULD BE UNDEFINED
 
@@ -11,12 +11,12 @@ app.use(express.json())
 
 app.use(morgan())
 
-const db = [];
+const db = []
 
 app.post('/todo', (req, res) => {
   const newtodo = {
     title: req.body.text,
-    id: Date.now()
+    id: Date.now(),
   }
   db.push(newtodo)
   res.json(newtodo)
